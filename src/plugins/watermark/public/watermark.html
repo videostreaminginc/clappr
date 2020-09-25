@@ -1,9 +1,31 @@
-<div class="clappr-watermark" data-watermark data-watermark-<%=position %>>
-<% if(typeof imageLink !== 'undefined') { %>
+<div class="clappr-watermark" data-watermark>
+  <!-- data-watermark-<%=position %> -->
+  <!-- <% if(typeof imageLink !== 'undefined') { %>
 <a target=_blank href="<%= imageLink %>">
-<% } %>
-<img src="<%= imageUrl %>">
-<% if(typeof imageLink !== 'undefined') { %>
+<% } %> -->
+  <!-- <img src="<%= imageUrl %>"> -->
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" height="100%" width="100%">
+    <g>
+      <defs>
+        <pattern id="pattern" shape-rendering="geometricPrecision" patternTransform="rotate(20) scale(0.1)"
+          patternUnits="userSpaceOnUse" width="10" height="10" x="0" y="0">
+          <text x="0" y="0.5" style="opacity: 0.2;" text-rendering="optimizeLegibility">
+            <tspan x="0" y="0.5" style="font-size: 0.35px;"><%= imageLink %></tspan>
+            <animate attributeName="fill" type="rotate" values="#777; #bbb; #777" dur="15s" repeatCount="indefinite">
+            </animate>
+          </text>
+        </pattern>
+      </defs>
+      <rect x="-50" y="-50" width="300" height="300" fill="url(#pattern)" shape-rendering="geometricPrecision">
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+          values="-15 0.5 0.5; 25 2.0 1.0; -15 0.5 0.5; 25 -1.0 -0.0; -15 0.5 0.5;" dur="60s"
+          repeatCount="indefinite" />
+      </rect>
+    </g>
+  </svg>
+
+  <!-- <% if(typeof imageLink !== 'undefined') { %>
 </a>
-<% } %>
+<% } %> -->
 </div>

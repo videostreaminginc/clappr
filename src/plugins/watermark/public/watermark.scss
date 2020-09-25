@@ -1,9 +1,13 @@
 .clappr-watermark[data-watermark] {
   position: absolute;
-  min-width: 70px;
-  max-width: 200px;
-  width: 12%;
-  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  //min-width: 70px;
+  //max-width: 200px;
+  //width: 12%;
+  //text-align: center;
   z-index: 10;
 }
 
